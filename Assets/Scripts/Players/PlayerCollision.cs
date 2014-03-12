@@ -9,7 +9,7 @@ public class PlayerCollision : MonoBehaviour {
 	int coinCombo = 0;
 	public int coinsForCombo = 10;
 	int coinComboExtra = 0;
-	public int coinsForMoreCombo;
+	public int coinsForMoreCombo = 3;
 
 	void OnTriggerEnter2D(Collider2D col)
 	{

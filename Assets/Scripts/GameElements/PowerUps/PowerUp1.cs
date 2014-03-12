@@ -5,6 +5,8 @@ public class PowerUp1 : PowerUp {
 	
 	void OnTriggerEnter2D(Collider2D col)
 	{
-
+		//example code
+		Destroy (gameObject);
+		print ("PowerUp1");
 	}
 }
