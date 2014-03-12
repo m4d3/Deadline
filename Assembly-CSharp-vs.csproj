@@ -46,14 +46,19 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Block.cs" />
-     <Compile Include="Assets\Scripts\BlockSpawner.cs" />
-     <Compile Include="Assets\Scripts\CoinSpawner.cs" />
-     <Compile Include="Assets\Scripts\Interface.cs" />
-     <Compile Include="Assets\Scripts\PlayerCollision.cs" />
-     <Compile Include="Assets\Scripts\PlayerControl.cs" />
-     <Compile Include="Assets\Scripts\RemoveOffscreen.cs" />
-     <Compile Include="Assets\Scripts\Scroller.cs" />
+     <Compile Include="Assets\Scripts\Background\Scroller.cs" />
+     <Compile Include="Assets\Scripts\GameElements\Blocks\Block.cs" />
+     <Compile Include="Assets\Scripts\GameElements\Blocks\BlockSpawner.cs" />
+     <Compile Include="Assets\Scripts\GameElements\Coin\CoinSpawner.cs" />
+     <Compile Include="Assets\Scripts\GameElements\PowerUps\PowerUp.cs" />
+     <Compile Include="Assets\Scripts\GameElements\PowerUps\PowerUp1.cs" />
+     <Compile Include="Assets\Scripts\GameElements\PowerUps\PowerUp2.cs" />
+     <Compile Include="Assets\Scripts\GameElements\PowerUps\PowerUp3.cs" />
+     <Compile Include="Assets\Scripts\GameElements\PowerUps\PowerUpSpawner.cs" />
+     <Compile Include="Assets\Scripts\GameElements\RemoveOffscreen.cs" />
+     <Compile Include="Assets\Scripts\Interface\Interface.cs" />
+     <Compile Include="Assets\Scripts\Players\PlayerCollision.cs" />
+     <Compile Include="Assets\Scripts\Players\PlayerControl.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
