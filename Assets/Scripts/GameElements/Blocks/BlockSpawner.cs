@@ -34,7 +34,7 @@ public class BlockSpawner : MonoBehaviour {
 		}
 	}
 
-	//spawn a single Blocj
+	//spawn a single Block
 	void SpawnBlock(int xPos)
 	{
 		if (player.GetComponent<PlayerCollision>().coins > blockCost) {

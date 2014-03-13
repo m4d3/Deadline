@@ -11,6 +11,11 @@ public class Interface : MonoBehaviour {
 
 	bool showEndScreen = false;
 
+    void Start()
+    {
+        Time.timeScale = 1;
+        showEndScreen = false;
+    }
 
 	void OnGUI() {
 
@@ -21,7 +26,8 @@ public class Interface : MonoBehaviour {
 		if (showEndScreen) {
 			GUI.Label(new Rect (Screen.width/2 - 100, Screen.height/2 - 50, 200, 100), "GAME OVER! ");
 			if(GUI.Button(new Rect (Screen.width/2 - 100, Screen.height/2 + 50, 200, 100), "Play Again")) {
-				Application.LoadLevel(0);
+                
+				Application.LoadLevel(0);                
 			}
 		}
 	}
@@ -34,9 +40,11 @@ public class Interface : MonoBehaviour {
 			EndGame ();
 		}
 		if (player1.coins >= winningCoins) {
+            player1.coins = winningCoins;
 			EndGame ();
 		}
 		if (player2.coins >= winningCoins) {
+            player2.coins = winningCoins;
 			EndGame ();
 		}
 	}

@@ -52,9 +52,8 @@ public class PowerUpSpawner : MonoBehaviour {
 	void SpawnPowerUp()
 	{
 		int random = (int) (Random.value * 3);
-		print (random);
 
-		GameObject newCoin = (GameObject)Instantiate(powerUpPrefabs[random], transform.position, Quaternion.identity);
-		newCoin.transform.parent = scroller.transform;
+		GameObject newPowerUp = (GameObject)Instantiate(powerUpPrefabs[random], transform.position, Quaternion.identity);
+		newPowerUp.transform.parent = scroller.transform;
 	}
 }

@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{F27F555A-3F27-1E3D-E030-72C9AB7DB3B5}</ProjectGuid>
+	<ProjectGuid>{881EEDD6-A38F-771E-168F-946A03FEA0A4}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -39,26 +39,27 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/GrafikProgramme/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/GrafikProgramme/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Background\Scroller.cs" />
      <Compile Include="Assets\Scripts\GameElements\Blocks\Block.cs" />
      <Compile Include="Assets\Scripts\GameElements\Blocks\BlockSpawner.cs" />
+     <Compile Include="Assets\Scripts\GameElements\Blocks\KickBlock.cs" />
+     <Compile Include="Assets\Scripts\GameElements\Blocks\KickBlockSpawner.cs" />
+     <Compile Include="Assets\Scripts\GameElements\Coin\Coin.cs" />
      <Compile Include="Assets\Scripts\GameElements\Coin\CoinSpawner.cs" />
      <Compile Include="Assets\Scripts\GameElements\PowerUps\PowerUp.cs" />
-     <Compile Include="Assets\Scripts\GameElements\PowerUps\PowerUp1.cs" />
-     <Compile Include="Assets\Scripts\GameElements\PowerUps\PowerUp2.cs" />
-     <Compile Include="Assets\Scripts\GameElements\PowerUps\PowerUp3.cs" />
      <Compile Include="Assets\Scripts\GameElements\PowerUps\PowerUpSpawner.cs" />
      <Compile Include="Assets\Scripts\GameElements\RemoveOffscreen.cs" />
      <Compile Include="Assets\Scripts\Interface\Interface.cs" />
      <Compile Include="Assets\Scripts\Players\PlayerCollision.cs" />
      <Compile Include="Assets\Scripts\Players\PlayerControl.cs" />
+     <Compile Include="Assets\Scripts\Players\PlayerPowerUps.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
