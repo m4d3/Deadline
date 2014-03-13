@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Background\BackgroundAnimator.cs" />
      <Compile Include="Assets\Scripts\Background\Scroller.cs" />
      <Compile Include="Assets\Scripts\GameElements\Blocks\Block.cs" />
      <Compile Include="Assets\Scripts\GameElements\Blocks\BlockSpawner.cs" />

@@ -20,7 +20,7 @@ public class Coin : MonoBehaviour
     {
         if (isPulled)
         {
-            transform.position = Vector3.Slerp(transform.position, player.transform.position, speed * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, player.transform.position, speed * Time.deltaTime);
         }
     }
 
