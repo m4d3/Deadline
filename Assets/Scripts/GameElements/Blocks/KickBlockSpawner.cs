@@ -49,8 +49,6 @@ public class KickBlockSpawner : MonoBehaviour
     void SpawnBlock(int xPos)
     {
         GameObject newBlock = (GameObject)Instantiate(kickBlock, new Vector3(xPos, transform.position.y, 0), Quaternion.identity);
-        newBlock.GetComponent<KickBlock>().leftPos = leftPos;
-        newBlock.GetComponent<KickBlock>().rightPos = rightPos;
         newBlock.transform.parent = scroller.transform;
     }
 }

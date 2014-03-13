@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\GameElements\Blocks\BlockSpawner.cs" />
      <Compile Include="Assets\Scripts\GameElements\Blocks\KickBlock.cs" />
      <Compile Include="Assets\Scripts\GameElements\Blocks\KickBlockSpawner.cs" />
+     <Compile Include="Assets\Scripts\GameElements\Blocks\PaperPlane.cs" />
      <Compile Include="Assets\Scripts\GameElements\Coin\Coin.cs" />
      <Compile Include="Assets\Scripts\GameElements\Coin\CoinSpawner.cs" />
      <Compile Include="Assets\Scripts\GameElements\PowerUps\PowerUp.cs" />
@@ -61,6 +62,7 @@
      <Compile Include="Assets\Scripts\Players\PlayerCollision.cs" />
      <Compile Include="Assets\Scripts\Players\PlayerControl.cs" />
      <Compile Include="Assets\Scripts\Players\PlayerPowerUps.cs" />
+     <Compile Include="Assets\Scripts\Players\StartScreen.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

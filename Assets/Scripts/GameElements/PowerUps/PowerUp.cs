@@ -8,9 +8,17 @@ public class PowerUp : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.CompareTag("Player")) {
-            col.gameObject.GetComponent<PlayerPowerUps>().GetPowerUp(powerUpType);
+        if (col.CompareTag("Player"))
+        {
+            if (!col.gameObject.GetComponent<Animator>().GetBool("Jumping"))
+            {
+                col.gameObject.GetComponent<PlayerPowerUps>().GetPowerUp(powerUpType);
+                Destroy(gameObject);
+            }
         }
-        Destroy(gameObject);
+        else
+        {
+            Destroy(gameObject);
+        }        
     }
 }

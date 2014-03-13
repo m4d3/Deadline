@@ -15,7 +15,7 @@ public class Interface : MonoBehaviour {
 
     void Start()
     {
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
         showEndScreen = false;
     }
 
@@ -24,9 +24,10 @@ public class Interface : MonoBehaviour {
 		GUI.skin = skin;		
 		
         // Player1 Interface
-        GUI.Label(new Rect(140, Screen.height - 50, 140, 50), "Coins: " + player1.coins);
+        GUI.Label(new Rect(110, Screen.height - 75, 140, 100), "" + player1.coins);
+        GUI.Label(new Rect(Screen.width / 2 + 110, Screen.height - 75, 140, 100), "" + player2.coins);
 
-        GUI.Box(new Rect(10, Screen.height - 50, 50, 50), "x"+powerUps1.powerUps[0]);
+        /*GUI.Box(new Rect(10, Screen.height - 50, 50, 50), "x"+powerUps1.powerUps[0]);
         GUI.Box(new Rect(70, Screen.height - 50, 50, 50), "x" + powerUps1.powerUps[1]);
         GUI.Box(new Rect(130, Screen.height - 50, 50, 50), "x" + powerUps1.powerUps[2]);
 
@@ -35,7 +36,7 @@ public class Interface : MonoBehaviour {
 
         GUI.Box(new Rect(Screen.width - 180, Screen.height - 50, 50, 50), "x" + powerUps2.powerUps[0]);
         GUI.Box(new Rect(Screen.width - 120, Screen.height - 50, 50, 50), "x" + powerUps2.powerUps[1]);
-        GUI.Box(new Rect(Screen.width - 60, Screen.height - 50, 50, 50), "x" + powerUps2.powerUps[2]);
+        GUI.Box(new Rect(Screen.width - 60, Screen.height - 50, 50, 50), "x" + powerUps2.powerUps[2]);*/
 
 		if (showEndScreen) {
 			GUI.Label(new Rect (Screen.width/2 - 100, Screen.height/2 - 50, 200, 100), "GAME OVER! ");
