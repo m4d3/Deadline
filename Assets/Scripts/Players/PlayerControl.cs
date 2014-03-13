@@ -11,11 +11,11 @@ public class PlayerControl : MonoBehaviour
 
     public float speed = 0.5f;
     public float jumpTime = 1;
-    public GameObject scroller;
+    public Scroller scroller;
 
     float jumpTimeBuffered;
     bool rightSide;
-    bool comboReady = false;
+
     Vector3 lerpPos;
     float lerpStep = 0;
 
@@ -26,12 +26,12 @@ public class PlayerControl : MonoBehaviour
         jumpTime = 0;
 
         lerpPos = transform.position;
-
     }
 
     // Update is called once per frame
     void Update()
     {
+       
 
         lerpStep += Time.deltaTime * speed;
         transform.position = Vector3.Lerp(transform.position, lerpPos, lerpStep);
@@ -42,11 +42,11 @@ public class PlayerControl : MonoBehaviour
             //check to which side to switch
             if (rightSide)
             {
-                lerpPos = new Vector3(-7, transform.position.y, 0);
+                lerpPos = new Vector3(-6, transform.position.y, 0);
             }
             else
             {
-                lerpPos = new Vector3(-1, transform.position.y, 0);
+                lerpPos = new Vector3(-2, transform.position.y, 0);
             }
             //invert right side
             rightSide = !rightSide;
@@ -58,11 +58,11 @@ public class PlayerControl : MonoBehaviour
             //check to which side to switch
             if (rightSide)
             {
-                lerpPos = new Vector3(1, transform.position.y, 0);
+                lerpPos = new Vector3(2, transform.position.y, 0);
             }
             else
             {
-                lerpPos = new Vector3(7, transform.position.y, 0);
+                lerpPos = new Vector3(6, transform.position.y, 0);
             }
             //invert right side
             rightSide = !rightSide;
@@ -83,53 +83,22 @@ public class PlayerControl : MonoBehaviour
         }
         else if (jumpTime < 0)
         {
+            lerpPos.y = -2.5f;
             jumpTime = 0;
             gameObject.GetComponent<BoxCollider2D>().enabled = true;
-            renderer.material.color = Color.white;
+            GetComponent<Animator>().SetBool("Jumping", false);
         }
 
-        if (Input.GetButtonDown("Combo1") && playerType == Players.player1 && comboReady)
-        {
-            UseCurrentCombo();
-        }
-        if (Input.GetButtonDown("Combo2") && playerType == Players.player2 && comboReady)
-        {
-            UseCurrentCombo();
-        }
+        //adjust animation speed - dependent on scroll speed of Scroller
+        gameObject.GetComponent<Animator>().speed = scroller.scrollSpeed / 4 + 0.3f;
+
     }
 
     void Jump()
     {
-
+        lerpPos.y = -2;
         jumpTime = jumpTimeBuffered;
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
-        renderer.material.color = Color.red;
-    }
-
-    public void GetNewCombo()
-    {
-        comboReady = true;
-        renderer.material.color = Color.blue;
-    }
-
-    void UseCurrentCombo()
-    {
-        BombCombo();
-        comboReady = false;
-    }
-
-    void BombCombo()
-    {
-        foreach (Transform child in scroller.transform)
-        {
-            if (child.gameObject.CompareTag("Block"))
-            {
-                if (child.gameObject.GetComponent<Block>().playerNumber == 1 && playerType == Players.player1)
-                    Destroy(child.gameObject);
-
-                else if (child.gameObject.GetComponent<Block>().playerNumber == 2 && playerType == Players.player2)
-                    Destroy(child.gameObject);
-            }
-        }
+        GetComponent<Animator>().SetBool("Jumping", true);
     }
 }

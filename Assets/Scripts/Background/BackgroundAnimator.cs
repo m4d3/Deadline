@@ -4,6 +4,7 @@ using System.Collections;
 public class BackgroundAnimator : MonoBehaviour {
 
     public Scroller scroller;
+    public Texture[] backgroundTextures;
 
 	// Use this for initialization
 	void Start () {
@@ -12,21 +13,16 @@ public class BackgroundAnimator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float yPos = 0;
         float speed = -scroller.scrollSpeed * Time.deltaTime;
 
-        foreach (Transform child in transform)
-        {
-            child.transform.Translate(Vector3.up * speed);
+        transform.Translate(Vector3.up * speed);
 
-            //if (child.transform.position.y >= yPos)
-            //{
-            //    yPos = child.transform.position.y;
-            //}
-            
+        foreach (Transform child in transform)
+        {            
             if (child.transform.position.y <= -9)
             {
-                child.transform.position = new Vector3(0, 9, 1);
+                child.renderer.material.mainTexture = backgroundTextures[(int)Random.Range(0, backgroundTextures.Length-1)];
+                child.transform.position = new Vector3(0, 9 + (child.transform.position.y + 9), 1);
             }            
         }
 	}

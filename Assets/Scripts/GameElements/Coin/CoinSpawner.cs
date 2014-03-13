@@ -77,6 +77,5 @@ public class CoinSpawner : MonoBehaviour {
 	{
 		GameObject newCoin = (GameObject)Instantiate(coinPrefab, transform.position, Quaternion.identity);
 		newCoin.transform.parent = scroller.transform;
-		newCoin.transform.Rotate (new Vector3 (90, 0, 0));
 	}
 }

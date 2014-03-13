@@ -8,8 +8,8 @@ public class BlockSpawner : MonoBehaviour {
 	public GameObject player;
 	public GameObject scroller;
 	public GameObject block;
-	public int leftPos;
-	public int rightPos;
+	public float leftPos;
+	public float rightPos;
 	public int blockCost = 2;
 
 	// Use this for initialization
@@ -35,10 +35,10 @@ public class BlockSpawner : MonoBehaviour {
 	}
 
 	//spawn a single Block
-	void SpawnBlock(int xPos)
+	void SpawnBlock(float xPos)
 	{
 		if (player.GetComponent<PlayerCollision>().coins > blockCost) {
-			GameObject newBlock = (GameObject)Instantiate (block, new Vector3 (xPos, 1.5f, 0), Quaternion.identity);
+			GameObject newBlock = (GameObject)Instantiate (block, new Vector3 (xPos, transform.position.y, 1), Quaternion.identity);
 			//newBlock.transform.parent = scroller.transform;
 			if (playerEnum == Players.player1)
 				newBlock.GetComponent<Block>().playerNumber = 1;

@@ -24,14 +24,14 @@ public class Interface : MonoBehaviour {
 		GUI.skin = skin;		
 		
         // Player1 Interface
-        GUI.Label(new Rect(0, 0, 140, 50), "Coins: " + player1.coins);
+        GUI.Label(new Rect(140, Screen.height - 50, 140, 50), "Coins: " + player1.coins);
 
         GUI.Box(new Rect(10, Screen.height - 50, 50, 50), "x"+powerUps1.powerUps[0]);
         GUI.Box(new Rect(70, Screen.height - 50, 50, 50), "x" + powerUps1.powerUps[1]);
         GUI.Box(new Rect(130, Screen.height - 50, 50, 50), "x" + powerUps1.powerUps[2]);
 
         // Player2 Interface
-        GUI.Label(new Rect(Screen.width - 140, 0, 140, 50), "Coins: " + player2.coins);
+        GUI.Label(new Rect(Screen.width - 140, Screen.height - 50, 140, 50), "Coins: " + player2.coins);
 
         GUI.Box(new Rect(Screen.width - 180, Screen.height - 50, 50, 50), "x" + powerUps2.powerUps[0]);
         GUI.Box(new Rect(Screen.width - 120, Screen.height - 50, 50, 50), "x" + powerUps2.powerUps[1]);
